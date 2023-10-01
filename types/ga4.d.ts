@@ -52,7 +52,6 @@ export class GA4 {
      * @param {Object} [options]
      * @param {boolean} [options.scriptSrc="https://www.googletagmanager.com/gtag/js"]
      * @param {'async'|'defer'} [options.scriptLoadingMode='async']
-     * @param {boolean} [options.legacyDimensionMetric=true]
      * @param {string} [options.nonce]
      * @param {boolean} [options.testMode=false]
      * @param {GaOptions|any} [options.gaOptions]
@@ -61,7 +60,6 @@ export class GA4 {
     initialize: (GA_MEASUREMENT_ID: InitOptions[] | string, options?: {
         scriptSrc?: boolean;
         scriptLoadingMode?: 'async' | 'defer';
-        legacyDimensionMetric?: boolean;
         nonce?: string;
         testMode?: boolean;
         gaOptions?: GaOptions | any;

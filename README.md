@@ -4,7 +4,6 @@
 
 ```js
 // Simply replace `react-ga` with `react-ga4-forked`
-// import ReactGA from "react-ga";
 import ReactGA from "react-ga4-forked";
 ```
 
@@ -20,7 +19,6 @@ npm i react-ga4-forked
 import ReactGA from "react-ga4-forked";
 
 ReactGA.initialize("your GA measurement id");
-ReactGA.send("pageview");
 ```
 
 ## Example
@@ -41,7 +39,7 @@ ReactGA.initialize([
 ]);
 
 // Send pageview with a custom path
-ReactGA.send({ hitType: "pageview", page: "/my-path" });
+ReactGA.send({ hitType: "pageview", page: "/my-path", title: "Custom Title" });
 
 // Send a custom event
 ReactGA.event({
@@ -65,7 +63,6 @@ ReactGA.event({
 | options.testMode              | `boolean` Default false                                                                                                 |
 | options.gaOptions             | `object` Optional [Reference](https://developers.google.com/analytics/devguides/collection/analyticsjs/field-reference) |
 | options.gtagOptions           | `object` Optional                                                                                                       |
-| options.legacyDimensionMetric | `boolean` Default true                                                                                                  |
 | options.scriptSrc             | `string` Default `https://www.googletagmanager.com/gtag/js`                                                             |
 | options.scriptLoadingMode     | `'async'\|'defer'\` Default `async`                                                                                     |
 
@@ -86,17 +83,15 @@ This method signature are NOT for `UA-XXX`
 
 #### ReactGA.event(options)
 
-| Parameter                    | Notes                               |
-| ---------------------------- | ----------------------------------- |
-| options                      | `object` Required                   |
-| options.action               | `string` Required                   |
-| options.category             | `string` Required                   |
-| options.label                | `string` Optional                   |
-| options.value                | `number` Optional                   |
-| options.nonInteraction       | `boolean` Optional                  |
-| options.transport            | `'beacon'\|'xhr'\|'image'` Optional |
-| options.dimension`{1...200}` | `any` Optional                      |
-| options.metric`{1...200}`    | `any` Optional                      |
+| Parameter              | Notes                               |
+| ---------------------- | ----------------------------------- |
+| options                | `object` Required                   |
+| options.action         | `string` Required                   |
+| options.category       | `string` Required                   |
+| options.label          | `string` Optional                   |
+| options.value          | `number` Optional                   |
+| options.nonInteraction | `boolean` Optional                  |
+| options.transport      | `'beacon'\|'xhr'\|'image'` Optional |
 
 #### ReactGA.send(fieldsObject)
 
@@ -107,14 +102,6 @@ This method signature are NOT for `UA-XXX`
 #### ReactGA&#46;gtag(...args)
 
 #### ReactGA&#46;ga(...args)
-
-#### ~~ReactGA.pageview(path, \_, title)~~
-
-Deprecated Use `.send("pageview")` instead
-
-#### ~~ReactGA.outboundLink({ label }, hitCallback)~~
-
-Deprecated Use `enhanced measurement` feature in Google Analytics.
 
 ### Extending
 

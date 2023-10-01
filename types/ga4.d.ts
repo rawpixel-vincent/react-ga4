@@ -44,7 +44,7 @@ export class GA4 {
     _queueGtag: any[];
     _gtag: (...args: any[]) => void;
     gtag(...args: any[]): void;
-    _loadGA: (GA_MEASUREMENT_ID: any, nonce: any, scriptSrc: any, scriptLoadingMode: any) => void;
+    _loadGA: (GA_MEASUREMENT_ID: any, nonce: any, scriptSrc?: string, scriptLoadingMode?: string) => void;
     _toGtagOptions: (gaOptions: any) => {};
     /**
      *
@@ -84,25 +84,6 @@ export class GA4 {
      */
     event: (optionsOrName: UaEventOptions | string, params?: any) => void;
     send: (fieldObject: any) => void;
-    _appendCustomMap(options: any, legacyDimensionMetric?: boolean): any;
-    /**
-     * @since v1.0.2
-     * @param {string} [path="location.href"]
-     * @param {string[]} [_] unsupported
-     * @param {string} [title="location.pathname"]
-     * @deprecated Use `.send("pageview")` instead
-     */
-    pageview: (path?: string, _?: string[], title?: string) => void;
-    /**
-     * @since v1.0.6
-     * @param {Object} options
-     * @param {string} options.label
-     * @param {function} hitCallback
-     * @deprecated Use `enhanced measurement` feature in Google Analytics.
-     */
-    outboundLink({ label }: {
-        label: string;
-    }, hitCallback: Function): void;
 }
 declare const _default: GA4;
 export default _default;

@@ -59,7 +59,7 @@ export class GA4 {
      */
     initialize: (GA_MEASUREMENT_ID: InitOptions[] | string, options?: {
         scriptSrc?: boolean;
-        scriptLoadingMode?: 'async' | 'defer';
+        scriptLoadingMode?: "async" | "defer";
         nonce?: string;
         testMode?: boolean;
         gaOptions?: GaOptions | any;
@@ -75,7 +75,7 @@ export class GA4 {
     _gaCommandSend: (...args: any[]) => void;
     _gaCommandSet: (...args: any[]) => void;
     _gaCommand: (command: any, ...args: any[]) => void;
-    ga: (...args: any[]) => any;
+    ga: (...args: any[]) => /*elided*/ any;
     /**
      * @param {UaEventOptions|string} optionsOrName
      * @param {Object} [params]
@@ -112,7 +112,7 @@ export type UaEventOptions = {
     label?: string;
     value?: number;
     nonInteraction?: boolean;
-    transport?: ('beacon' | 'xhr' | 'image');
+    transport?: ("beacon" | "xhr" | "image");
 };
 export type InitOptions = {
     trackingId: string;
